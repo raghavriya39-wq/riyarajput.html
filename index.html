@@ -15,7 +15,7 @@
     }.card {
   position: relative;
   width: 350px;
-  height: 300px;
+  height: 420px;
   background: white;
   border-radius: 20px;
   box-shadow: 0 15px 30px rgba(0,0,0,0.2);
@@ -26,8 +26,16 @@
 
 h1 {
   color: #e91e63;
-  font-size: 22px;
-  margin-bottom: 40px;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.couple-gif {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 20px;
 }
 
 button {
@@ -43,7 +51,7 @@ button {
   background-color: #ff4d88;
   color: white;
   position: absolute;
-  top: 55%;
+  top: 70%;
   left: 30%;
   transform: translate(-50%, -50%);
 }
@@ -57,13 +65,13 @@ button {
   border: 2px solid #ff4d88;
   color: #ff4d88;
   position: absolute;
-  top: 55%;
+  top: 70%;
   left: 60%;
   transform: translate(-50%, -50%);
 }
 
 .message {
-  margin-top: 60px;
+  margin-top: 20px;
   font-size: 20px;
   color: green;
   font-weight: bold;
@@ -73,11 +81,17 @@ button {
   </style>
 </head>
 <body>  <div class="card">
-    <h1>💖 Will You Stay Forever With Me? 💖</h1><button class="yes-btn" onclick="showMessage()">Yes 💕</button>
+    <h1>💖 Will You marry me Abhilash Rathore? 💖</h1><!-- Add Your Couple GIF Here -->
+
+
+<button class="yes-btn" onclick="showMessage()">Yes 💕</button>
 <button class="no-btn" onmouseover="moveButton()" ontouchstart="moveButton()">No 💔</button>
 
 <div class="message" id="loveMessage">
   Awwww! I Love You Forever 😘❤️
+<img src="https://media.giphy.com/media/xOvhMKk3EyS1LKQtkK/giphy.gif" class="couple-gif" alt="Couple Love GIF">
+
+
 </div>
 
   </div>  <script>
@@ -91,9 +105,7 @@ button {
       const button = document.querySelector('.no-btn');
       const card = document.querySelector('.card');
 
-      const cardRect = card.getBoundingClientRect();
       const btnRect = button.getBoundingClientRect();
-
       const maxX = card.clientWidth - btnRect.width;
       const maxY = card.clientHeight - btnRect.height;
 
