@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forever With Me 💖</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to bottom right, #ffc0cb, #ff9eb5, #ffb6c1);
+      font-family: Arial, sans-serif;
+    }.card {
+  position: relative;
+  width: 350px;
+  height: 300px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  text-align: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+h1 {
+  color: #e91e63;
+  font-size: 22px;
+  margin-bottom: 40px;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.yes-btn {
+  background-color: #ff4d88;
+  color: white;
+  position: absolute;
+  top: 55%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+}
+
+.yes-btn:hover {
+  background-color: #e6005c;
+}
+
+.no-btn {
+  background-color: white;
+  border: 2px solid #ff4d88;
+  color: #ff4d88;
+  position: absolute;
+  top: 55%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+}
+
+.message {
+  margin-top: 60px;
+  font-size: 20px;
+  color: green;
+  font-weight: bold;
+  display: none;
+}
+
+  </style>
+</head>
+<body>  <div class="card">
+    <h1>💖 Will You Stay Forever With Me? 💖</h1><button class="yes-btn" onclick="showMessage()">Yes 💕</button>
+<button class="no-btn" onmouseover="moveButton()" ontouchstart="moveButton()">No 💔</button>
+
+<div class="message" id="loveMessage">
+  Awwww! I Love You Forever 😘❤️
+</div>
+
+  </div>  <script>
+    function showMessage() {
+      document.querySelector('.yes-btn').style.display = 'none';
+      document.querySelector('.no-btn').style.display = 'none';
+      document.getElementById('loveMessage').style.display = 'block';
+    }
+
+    function moveButton() {
+      const button = document.querySelector('.no-btn');
+      const card = document.querySelector('.card');
+
+      const cardRect = card.getBoundingClientRect();
+      const btnRect = button.getBoundingClientRect();
+
+      const maxX = card.clientWidth - btnRect.width;
+      const maxY = card.clientHeight - btnRect.height;
+
+      const randomX = Math.random() * maxX;
+      const randomY = Math.random() * maxY;
+
+      button.style.left = randomX + 'px';
+      button.style.top = randomY + 'px';
+    }
+  </script></body>
+</html>
